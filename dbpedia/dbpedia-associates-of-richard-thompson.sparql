@@ -1,0 +1,12 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+SELECT DISTINCT ?band ?associate
+
+WHERE {
+
+  { ?s ?p <http://dbpedia.org/resource/Richard_Thompson_(musician)> ; 
+       dbo:associatedBand ?band }
+UNION
+  { ?s ?p <http://dbpedia.org/resource/Richard_Thompson_(musician)> ;               dbo:associatedMusicalArtist ?associate }
+
+}
