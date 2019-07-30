@@ -1,3 +1,6 @@
+# Query can be run on the DBpedia endpoint: http://dbpedia.org/snorql/.
+# Just copy every thing below & paste in DBpedia...and click Go!
+
 PREFIX dbo: <http://dbpedia.org/ontology/>
 
 SELECT DISTINCT ?band ?associate
