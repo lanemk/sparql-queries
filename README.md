@@ -1,5 +1,5 @@
 # sparql-queries
-Avast ye maties, behold a treasure trove of truly amazing queries using SPARQL.
+SPARQL queries...
 
 NOTES
-- Scripts in 'dbpedia' can be run through http://dbpedia.org/snorql/. 
+- Look for comments in queries for SPARQL endpoints to run scripts. Endpoints may not always be available or geared for processing public queries.
