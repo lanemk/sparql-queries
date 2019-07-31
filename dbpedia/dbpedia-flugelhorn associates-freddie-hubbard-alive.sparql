@@ -1,0 +1,18 @@
+# Find flugelhorn-playing associates of Freddie Hubbard who are still alive.
+# Query can be run on the DBpedia endpoint: http://dbpedia.org/snorql/.
+
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT DISTINCT ?associate
+
+WHERE {
+
+  { ?s ?p <http://dbpedia.org/resource/Freddie_Hubbard> ; dbo:associatedMusicalArtist ?associate .
+    ?associate dbo:instrument dbr:Flugelhorn .
+}
+
+FILTER NOT EXISTS { ?associate dbo:deathDate ?ddate }
+
+}
