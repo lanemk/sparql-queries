@@ -1,0 +1,15 @@
+# Find musical groups with genre "acid jazz".
+# Query can be run on the DBpedia endpoint: http://dbpedia.org/snorql/.
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbc: <http://dbpedia.org/resource/Category>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?artist ?band 
+    WHERE {
+        ?artist dbo:genre :Acid_jazz ;
+                a schema:MusicGroup ;
+                rdfs:label ?band .
+FILTER LANGMATCHES(LANG(?band),  "EN")
+}
