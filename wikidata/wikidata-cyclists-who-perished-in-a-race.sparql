@@ -1,0 +1,16 @@
+#Cyclists who perished in a race accident
+#defaultView:ImageGrid
+
+SELECT ?name ?item ?deathDate ?race ?image
+WHERE {
+    ?item wdt:P106 wd:Q2309784 ;  # cyclist
+             wdt:P570 ?deathDate ;
+             wdt:P1559 ?name ;
+             wdt:P509 wd:Q1064904 ;
+             wdt:P641 wd:Q3609 .
+
+    OPTIONAL { ?item wdt:P18 ?image }
+
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],fr" }
+}
+ORDER BY DESC(?deathDate)
