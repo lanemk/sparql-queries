@@ -1,6 +1,7 @@
-# Find associated musical artists (bandmates), and groups associated
-# with Richard Thompson. Results show poorly coded metadata (duplication).
-# Query can be run on the DBpedia endpoint: http://dbpedia.org/snorql/.
+# Find associated musical artists (bandmates), and groups associated with Richard Thompson.
+# Results show a problem with the coded metadata (value duplication on separate properties).
+# Run this query on the DBpedia endpoint: http://dbpedia.org/snorql/
+# or, see the corresponding RESULTS file (json).
 
 PREFIX dbo: <http://dbpedia.org/ontology/>
 
@@ -8,9 +9,8 @@ SELECT DISTINCT ?band ?associate
 
 WHERE {
 
-  { ?s ?p <http://dbpedia.org/resource/Richard_Thompson_(musician)> ; 
-       dbo:associatedBand ?band }
+  { ?s ?p <http://dbpedia.org/resource/Richard_Thompson_(musician)> ; dbo:associatedBand ?band }
 UNION
-  { ?s ?p <http://dbpedia.org/resource/Richard_Thompson_(musician)> ;               dbo:associatedMusicalArtist ?associate }
+  { ?s ?p <http://dbpedia.org/resource/Richard_Thompson_(musician)> ; dbo:associatedMusicalArtist ?associate }
 
 }
