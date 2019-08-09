@@ -1,0 +1,18 @@
+# Mother of more than 7 of Bach's children grouped by mother.
+# HAVING is always used in combination with GROUP BY.
+# HAVING clause can be useful for finding duplicates, 
+# like HAVING (COUNT(?var)>1)
+
+SELECT ?mother ?motherLabel (COUNT(?child) AS ?children) 
+        (GROUP_CONCAT(DISTINCT ?childLabel; SEPARATOR=", ") AS ?names)
+WHERE
+{
+  ?child wdt:P22 wd:Q1339.# ?child has father Bach
+  ?child wdt:P25 ?mother.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". 
+                          ?mother rdfs:label ?motherLabel.
+                          ?child  rdfs:label ?childLabel.
+                         }
+}
+GROUP BY ?mother ?motherLabel 
+HAVING (COUNT(?child)>7)

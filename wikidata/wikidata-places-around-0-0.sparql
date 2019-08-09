@@ -1,0 +1,13 @@
+# Places around 0°,0° 
+
+SELECT ?place ?placeLabel ?location ?dist
+WHERE {
+  SERVICE wikibase:around { 
+      ?place wdt:P625 ?location. 
+      bd:serviceParam wikibase:center "Point(0 0)"^^geo:wktLiteral.
+      bd:serviceParam wikibase:radius "250". 
+  } 
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  BIND(geof:distance("Point(0 0)"^^geo:wktLiteral, ?location) as ?dist) 
+} 
+ORDER BY ?dist

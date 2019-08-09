@@ -1,0 +1,17 @@
+# Airports within 100km from Berlin using :geof:distance"
+
+SELECT ?place ?placeLabel ?location ?dist 
+WHERE {
+  # Berlin coordinates
+  wd:Q64 wdt:P625 ?berlinLoc. 
+  SERVICE wikibase:around { 
+      ?place wdt:P625 ?location. 
+      bd:serviceParam wikibase:center ?berlinLoc. 
+      bd:serviceParam wikibase:radius "100". 
+  } 
+  # Is an airport
+  ?place wdt:P31/wdt:P279* wd:Q1248784.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } 
+  BIND(geof:distance(?berlinLoc, ?location) as ?dist) 
+} 
+ORDER BY ?dist

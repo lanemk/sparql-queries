@@ -1,0 +1,9 @@
+# BIND items as string with STR function and then into IRI.
+
+SELECT ?item ?itemLabel ?string ?StringLabel ?iri ?iriLabel 
+WHERE {
+    VALUES ?item { wd:Q1339 }.
+    BIND( STR(?item) AS ?string ).
+  	BIND( IRI(?string) AS ?iri ).
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}

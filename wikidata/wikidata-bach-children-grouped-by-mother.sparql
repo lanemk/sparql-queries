@@ -1,0 +1,17 @@
+# Bach's children grouped by mother.
+# GROUP BY both variables ?mother and ?motherLabel; 
+# if label is missing, you end up with an error "Bad Aggregate".
+
+
+SELECT ?mother ?motherLabel (COUNT(?child) AS ?children) 
+        (GROUP_CONCAT(DISTINCT ?childLabel; SEPARATOR=", ";) AS ?names)
+WHERE
+{
+  ?child wdt:P22 wd:Q1339.# ?child has father Bach
+  ?child wdt:P25 ?mother.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". 
+                          ?mother rdfs:label ?motherLabel.
+                          ?child  rdfs:label ?childLabel.
+                         }
+}
+GROUP BY ?mother ?motherLabel

@@ -1,0 +1,13 @@
+# UNION EU capital cities with millions of inhabitants
+
+
+SELECT DISTINCT ?city ?cityLabel
+WHERE {
+  wd:Q458 wdt:P150 ?country.   # European Union  contains administrative territorial entity
+  { ?country wdt:P36 ?city. }  # capital 
+  UNION
+  { ?city wdt:P17 ?country.    # city in a (European) country
+    ?city wdt:P31 wd:Q1637706. # a city with millions of inhabitants
+  }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}

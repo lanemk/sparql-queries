@@ -1,0 +1,15 @@
+# Schools between San Jose, CA and Sacramento, CA
+#defaultView:Map
+
+SELECT ?place ?placeLabel ?location 
+WHERE {
+  wd:Q16553 wdt:P625 ?SJloc.
+  wd:Q18013 wdt:P625 ?SCloc.
+  SERVICE wikibase:box {
+      ?place wdt:P625 ?location.
+      bd:serviceParam wikibase:cornerSouthWest ?SJloc.
+      bd:serviceParam wikibase:cornerNorthEast ?SCloc.
+  }
+  ?place wdt:P31/wdt:P279* wd:Q3914.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } 
+}
