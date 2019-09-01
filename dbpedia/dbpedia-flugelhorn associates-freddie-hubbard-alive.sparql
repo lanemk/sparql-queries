@@ -11,7 +11,7 @@ WHERE {
 
   { ?s ?p <http://dbpedia.org/resource/Freddie_Hubbard> ; dbo:associatedMusicalArtist ?associate .
     ?associate dbo:instrument dbr:Flugelhorn ;
-rdfs:label ?associateLabel
+              rdfs:label ?associateLabel .
 }
 
 FILTER NOT EXISTS { ?associate dbo:deathDate ?ddate }
