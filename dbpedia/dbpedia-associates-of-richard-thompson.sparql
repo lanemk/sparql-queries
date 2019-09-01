@@ -1,7 +1,7 @@
 # Find associated musical artists (bandmates), and groups associated with Richard Thompson.
-# Results show a problem with the coded metadata (value duplication on separate properties).
-# Run this query on the DBpedia endpoint: http://dbpedia.org/snorql/
-# or, see the corresponding RESULTS file (json).
+# Results an issue with the encoded metadata; values are duplicated on separate properties.
+# You can run this query on the DBpedia endpoint: http://dbpedia.org/snorql/
+# or, see the attached "RESULTS" file (in JSON).
 
 PREFIX dbo: <http://dbpedia.org/ontology/>
 
