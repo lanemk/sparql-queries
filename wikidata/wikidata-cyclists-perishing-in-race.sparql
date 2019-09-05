@@ -1,4 +1,5 @@
 #Cyclists who perished in a race accident
+#SPARQL endpoint: https://query.wikidata.org/
 #defaultView:ImageGrid
 
 SELECT ?name ?item ?deathDate ?race ?image
