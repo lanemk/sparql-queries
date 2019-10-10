@@ -1,3 +1,3 @@
 # sparql-queries
 NOTES
-- Script comments will often indicate URL endpoints to run SPARQL queries. Endpoints may not always be available, however, or rigged for processing public queries. Every attempt is made to locate a suitable endpoint so results can be observed.
+- Script comments try for URL endpoints to run the queries. Endpoints may not always be available, or rigged for processing public queries. You are welcome to download files and run queries on a local system. Oterwise, RESULTS are available for cross-reference.
