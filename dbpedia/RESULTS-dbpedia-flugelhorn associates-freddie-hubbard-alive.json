@@ -1,4 +1,0 @@
-
-{ "head": { "link": [], "vars": ["associateLabel"] },
-  "results": { "distinct": false, "ordered": true, "bindings": [
-    { "associateLabel": { "type": "literal", "xml:lang": "en", "value": "Wynton Marsalis" }} ] } }
