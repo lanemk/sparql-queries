@@ -1,7 +1,6 @@
-# Find musical groups with genre "acid jazz".
+# musical groups : label : genre "acid jazz"
 # Run this query on the DBpedia SPARQL Explorer:
-# http://dbpedia.org/snorql/
-# or, see the corresponding RESULTS file (json).
+# http://dbpedia.org/snorql/ or, see the corresponding RESULTS file (csv).
 
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX dbc: <http://dbpedia.org/resource/Category>

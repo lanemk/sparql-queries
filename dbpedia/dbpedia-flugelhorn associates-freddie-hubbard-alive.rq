@@ -1,6 +1,6 @@
-# Find flugelhorn-playing associates of Freddie Hubbard who are still alive.
+# flugelhorn-playing associates : Freddie Hubbard : still alive 
 # Run this query on the DBpedia endpoint: http://dbpedia.org/snorql/.
-# or, see the corresponding RESULTS file (json).
+# or, see the corresponding RESULTS file (csv).
 
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX dbr: <http://dbpedia.org/resource/>

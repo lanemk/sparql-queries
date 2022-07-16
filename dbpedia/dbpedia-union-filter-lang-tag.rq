@@ -1,0 +1,14 @@
+# union : filter : lang tag
+# Run this query on the DBpedia endpoint: http://dbpedia.org/snorql/.
+# or, see the corresponding RESULTS file (csv).
+
+    PREFIX dbr: <http://dbpedia.org/resource/> 
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    
+    SELECT ?french ?spanish ?arabic
+    
+    where{ { dbr:Apple rdfs:label ?french   FILTER ( lang(?french) = "fr" ) }
+    UNION
+    { dbr:Apple rdfs:label ?spanish   FILTER ( lang(?spanish) = "es" ) }
+    UNION
+    { dbr:Apple rdfs:label ?arabic   FILTER ( lang(?arabic) = "ar" ) }}
